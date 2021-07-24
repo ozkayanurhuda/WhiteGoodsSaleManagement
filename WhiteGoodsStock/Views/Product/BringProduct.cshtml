@@ -1,0 +1,26 @@
+﻿@model WhiteGoodsStock.Models.Entity.TBLPRODUCTS
+@{
+    ViewBag.Title = "BringProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post))
+{
+    <h2>Update Product</h2>
+    @Html.HiddenFor(x => x.id)
+    <br />
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.brand, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.stock, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.purchaseprice, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.saleprice, new { @class = "form-control" })
+    <br />
+    @Html.DropDownListFor(x=>x.TBLCATEGORY.id, (List<SelectListItem>)ViewBag.val, new {@class="form-control"})
+    <br />
+    <button class="btn btn-warning">Update</button>
+}
+

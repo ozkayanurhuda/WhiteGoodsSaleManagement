@@ -1,0 +1,32 @@
+﻿@using WhiteGoodsStock.Models.Entity
+@model List<TBLSALES>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>PRODUCT</th>
+        <th>STAFF</th>
+        <th>CUSTOMER</th>
+        <th>PRICE</th>
+        <th>DATE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.TBLPRODUCTS.name</td>
+            <td>@x.TBLSTAFF.name @x.TBLSTAFF.surname</td>
+            <td>@x.TBLCUSTOMER.name @x.TBLCUSTOMER.surname</td>
+            <td>@x.price</td>
+            <td>@x.date</td>
+                    
+        </tr>
+    }
+</table>
+<a href="/Sale/NewSale/" class="btn btn-warning">New Sale</a>
+
+

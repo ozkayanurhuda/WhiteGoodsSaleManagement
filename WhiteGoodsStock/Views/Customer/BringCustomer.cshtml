@@ -1,0 +1,22 @@
+﻿@model WhiteGoodsStock.Models.Entity.TBLCUSTOMER
+@{
+    ViewBag.Title = "BringCustomer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateCustomer", "Customer", FormMethod.Post))
+{
+    <h2>Update Customer</h2>
+    @Html.HiddenFor(x => x.id)
+    <br />
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.surname, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.city, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.balance, new { @class = "form-control" })
+    <br />
+   
+    <button class="btn btn-warning">Update</button>
+}

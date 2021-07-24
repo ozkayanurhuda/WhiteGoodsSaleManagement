@@ -1,0 +1,47 @@
+﻿@using WhiteGoodsStock.Models.Entity
+@model List<TBLPRODUCTS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*arama işlemi için*@ 
+@using(Html.BeginForm("Index", "Product", FormMethod.Get))
+            {
+                <p>
+                    Product Name: @Html.TextBox("p")
+                    <input type="submit" value="Search" />
+                </p>
+            }
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>BRAND</th>
+        <th>STOCK</th>
+        <th>PURCHASE PRICE</th>
+        <th>SALE PRICE</th>
+        <th>CATEGORY</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+<tr>
+    <td>@x.id</td>
+    <td>@x.name</td>
+    <td>@x.brand</td>
+    <td>@x.stock</td>
+    <td>@x.purchaseprice</td>
+    <td>@x.saleprice</td>
+    <td>@x.TBLCATEGORY.name</td>
+    <td><a href="/Product/DeleteProduct/@x.id" class="btn btn-warning">Delete</a></td>
+    <td><a href="/Product/BringProduct/@x.id" class="btn btn-success">Update</a></td>
+</tr>
+            }
+
+
+
+</table>
+<a href="/Product/NewProduct/" class="btn btn-primary">New Product</a>

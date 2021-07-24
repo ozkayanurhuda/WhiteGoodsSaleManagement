@@ -1,0 +1,17 @@
+﻿@model WhiteGoodsStock.Models.Entity.TBLCATEGORY
+@{
+    ViewBag.Title = "NewCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*post içine almamız gerekiyor add butonuna basınca tetiklenmesi için*@
+<form method="post">
+    <h2>Add new category</h2>
+    <br />
+    <label>Enter category name:</label>
+    <input type="text" class="form-control" name="name" placeholder="Category name" />
+    <br />
+    <button class="btn btn-warning">Save</button>
+
+</form>
+

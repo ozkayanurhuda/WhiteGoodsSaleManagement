@@ -1,0 +1,18 @@
+﻿@model WhiteGoodsStock.Models.Entity.TBLCATEGORY
+@{
+    ViewBag.Title = "BringCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+{
+    <h2>Update Category</h2>
+    @Html.HiddenFor(x=>x.id)
+    <br />
+    @Html.TextBoxFor(x=>x.name, new {@class="form-control"})
+    <br />
+    <button class="btn btn-warning">Update</button>
+
+
+}
